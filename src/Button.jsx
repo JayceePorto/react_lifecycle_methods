@@ -1,27 +1,18 @@
 import React from "react";
 import "./App.css";
+      function Button() {
+    
+        function refreshPage() {
+          window.location.reload(false);
+        }
 
-class Button extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {isToggleOn: true};
+        return (
+          <div>
+            <button onClick={refreshPage}>Reload</button>
+          </div>
+        )
+      }
+
   
-      this.handleClick = this.handleClick.bind(this);
-    }
-  
-    handleClick() {
-      this.setState(prevState => ({
-        isToggleOn: !prevState.isToggleOn
-      }));
-    }
-  
-    render() {
-      return (
-        <button onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'ON' : 'OFF'}
-        </button>
-      );
-    }
-  }
 
   export default Button;

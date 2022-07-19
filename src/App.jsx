@@ -9,9 +9,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      //hasLoaded: true,
       title: "",
-      //films: [],
     };
   }
 
@@ -35,23 +33,16 @@ class App extends Component {
     .catch((err) => console.error(err))
   }
 
-  /*componentWillUnmount() {
-    this.controller.abort();
-  }*/
-
   render() {
     if (this.state.hasLoaded) {
     return (
       <main>
         <h1>Studio Ghibli Films</h1>
         <input 
-          //type="search"
           placeholder="Search Title"
-          //id="title" 
-          //name="title" 
-          //aria-label="Search Title" 
           value={this.state.title} 
           onChange={this.handleInput}/>
+          <Button onClick={() => window.location.reload(false)}>Click to reload!</Button>
         <ul>
           {this.filterResults()}
         </ul>
@@ -60,10 +51,6 @@ class App extends Component {
   } else {
     return <h1>Loading...</h1>;
   }
-}
-
-function () {
-  return Button;
 }
 
 }
